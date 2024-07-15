@@ -1,11 +1,14 @@
 {
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "npm run production",
+    "production": "node index.js",
+    "dev": "node dev.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "ejs": "^3.1.10",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-ws": "^5.0.2"
   }
 }
