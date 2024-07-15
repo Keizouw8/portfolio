@@ -1,0 +1,9 @@
+<script>
+    function setSize(){
+        document.documentElement.style.setProperty('--w', window.innerWidth);
+        document.documentElement.style.setProperty('--h', window.innerHeight);
+    }
+
+    setSize();
+    window.addEventListener("resize", setSize);
+</script>
