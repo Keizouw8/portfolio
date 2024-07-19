@@ -2,9 +2,9 @@
     :root{
         --white: #E3D8BB;
         --black: #231C11;
-        --yellow: #E8BE41;
-        --red: #911C2D;
-        --blue: #2A64B4;
+        --yellow: #E1B44B;
+        --red: #C04D3F;
+        --blue: #315F82;
         --w: 0;
         --h: 0;
     }
@@ -23,128 +23,85 @@
 
     h1{
         color: var(--black);
-        font-family: dunbar-eb;
-        font-size: 6vh;
+        font-family: pixel;
+        font-size: 10vh;
     }
-
+    
     h2{
         color: var(--black);
-        font-family: joschmi;
-        font-size: 6vh;
+        font-family: pixel;
+        font-size: 3.5vh;
     }
 
-    #landing{
-        --x: sqrt(pow(var(--w), 2) + pow(0.92 * var(--h), 2));
-        --y: sqrt(pow(var(--x), 2) - pow(0.08 * var(--h), 2));
-        --t: calc(asin(var(--y) / var(--x)) - asin(var(--w) / var(--x)));
-    }
-
-    .strip{
+    poster{
         position: absolute;
-        height: 8vh;
-        transform-origin: 0% 0%;
-    }
-
-    .strip#horizontal{
-        top: 0;
-        left: 0;
-        background: var(--white);
-        width: 100vw;
-    }
-
-    .strip#horizontal h2{
-        position: absolute;
-        top: 57%;
-        right: 2vh;
-        transform: translateY(-50%);
-        margin: 0;
-    }
-
-    .strip#vertical{
-        top: 0;
-        left: calc(5vw + 32.6vh);
-        background: var(--white);
-        transform: rotate(90deg);
-        width: 100vh;
-    }
-
-    .strip#diagonal{
-        background: var(--white);
-        top: 8vh;
-        left: 0;
-        width: calc(1px * var(--y));
-        transform: rotate(var(--t));
-    }
-
-    .strip#diagonal h1{
-        position: absolute;
-        top: 47%;
-        right: 5vh;
-        transform: translateY(-50%);
-        margin: 0;
-    }
-
-    #landing #gray{
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: calc(5vw + 25vh);
-        background: var(--black);
-    }
-
-    #landing #blue{
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: calc(95vw - 31vh);
         background: var(--blue);
+        height: 68vh;
+        width: calc(100vw - 12vh);
+        left: 6vh;
+        top: 6vh;
     }
 
-    #landing #red{
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        top: 8vh;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-bottom: calc(tan(var(--t)) * (1px + 100vw)) solid transparent;
-        border-right: 100vw solid var(--red);
+    #eye{
+        position: relative;
+        max-width: calc(100vw - 18vh);
+        max-height: 62vh;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
-    #landing #yellow{
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        top: 8vh;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-bottom: calc(1.01px * tan(var(--t)) * (0.05 * var(--w) + 0.246 * var(--h))) solid transparent;
-        border-right: calc(5vw + 24.6vh + 1px) solid var(--yellow);
+    #iris, #pupil{
+        transition: 0.1s;
     }
 
-    #coding{
-        position: absolute;
+    poster #school{
         color: var(--white);
-        bottom: calc(2vw + 4.2vh);
-        left: 2.5vw;
-        margin: 0;
-        padding: 0;
+        position: absolute;
+        transform: rotate(-90deg) translate(-46%, -400%);
+        transform-origin: 50% 50%;
+        top: 0;
+        left: 0;
     }
 
-    #philosophy{
+    poster #work{
+        color: var(--white);
         position: absolute;
-        color: var(--red);
-        bottom: 2vw;
-        left: 2.5vw;
+        transform: rotate(-90deg) translate(38%, 40%);
+        transform-origin: 50% 50%;
+        bottom: 0;
+        right: 0;
+    }
+
+    #landing #name{
+        color: var(--black);
+        font-family: pixel;
+        font-size: 10vh;
         margin: 0;
         padding: 0;
+        position: absolute;
+        left: 6vh;
+        top: 79vh;
+        line-height: 0.7;
+    }
+
+    #landing #name #last{
+        font-size: 8vh;
+    }
+
+    #landing #occupations{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 6vh;
+        top: 79vh;
+        line-height: 1;
+        text-align: right;
+    }
+
+    @media screen and (max-aspect-ratio: 68/100) {
+        poster #work, poster #school, #landing #occupations {
+            display: none;
+        }
     }
 </style>

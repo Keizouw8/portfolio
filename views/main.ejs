@@ -1,17 +1,21 @@
 <%- include("partials/head") %>
-<div id="landing">
-    <div id="gray"></div>
-    <div id="blue"></div>
-    <div id="red"></div>
-    <div id="yellow"></div>
-    <div class="strip" id="horizontal">
-        <h2>DAVIDSON ACADEMY</h2>
+    <div id="landing">
+        <poster>
+            <svg viewBox="0 0 62 100" id="eye">
+                <mask id="whiteMask">
+                    <circle cx="31" cy="31" r="31" fill="white" />
+                </mask>
+                <circle cx="31" cy="31" r="31" fill="var(--red)" />
+                <circle cx="31" cy="69" r="31" fill="var(--yellow)" />
+                <circle cx="31" cy="69" r="31" fill="var(--white)" mask="url(#whiteMask)" />
+                <circle cx="31" cy="50" r="10" fill="var(--blue)" id="iris" />
+                <circle cx="31" cy="50" r="5" fill="var(--black)" id="pupil" />
+            </svg>
+            <h2 id="school">Davidson Academy</h2>
+            <h2 id="work">Primum</h2>
+        </poster>
+        <h1 id="name">Keizou<br><span id="last">Wang</span></h1>
+        <h2 id="occupations">Philosophy<br>Programming<br><br>Education</h2>
     </div>
-    <div class="strip" id="vertical"></div>
-    <div class="strip" id="diagonal">
-        <h1>KEIZOU WANG</h1>
-    </div>
-    <h2 id="coding">CODING</h2>
-    <h2 id="philosophy">PHILOSOPHY</h2>
-</div>
+    <%- include("scripts/eye") %>
 <%- include("partials/feet") %>
