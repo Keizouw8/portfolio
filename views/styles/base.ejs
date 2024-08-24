@@ -1,10 +1,9 @@
 <style>
     :root{
-        --white: #E3D8BB;
-        --black: #231C11;
+        --white: white;
+        --black: black;
         --yellow: #E1B44B;
-        --red: #C04D3F;
-        --blue: #315F82;
+        --red: #ca1313;
         --w: 0;
         --h: 0;
     }
@@ -12,8 +11,8 @@
     body{
         -ms-overflow-style: none;
         scrollbar-width: none;
-        background: var(--white);
-        color: var(--black);
+        background: var(--black);
+        color: var(--red);
         overflow-x: hidden;
     }
 
@@ -22,90 +21,22 @@
     }
 
     h1{
-        color: var(--black);
-        font-family: pixel;
+        /* color: var(--black); */
+        font-family: dunbar-eb;
         font-size: 10vh;
-    }
-    
-    h2{
-        color: var(--black);
-        font-family: pixel;
-        font-size: 3.5vh;
-    }
-
-    poster{
-        position: absolute;
-        background: var(--blue);
-        height: 68vh;
-        width: calc(100vw - 12vh);
-        left: 6vh;
-        top: 6vh;
-    }
-
-    #eye{
-        position: relative;
-        max-width: calc(100vw - 18vh);
-        max-height: 62vh;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    #iris, #pupil{
-        transition: 0.1s;
-    }
-
-    poster #school{
-        padding: 0;
-        margin: 0;
-        color: var(--white);
-        position: absolute;
-        transform: rotate(-90deg) translate(-100%, 0);
-        transform-origin: 0% 0%;
-        top: 3vh;
-        left: 3vh;
-    }
-
-    poster #work{
-        padding: 0;
-        margin: 0;
-        color: var(--white);
-        position: absolute;
-        transform: rotate(-90deg) translate(100%, 0%);
-        transform-origin: 100% 100%;
-        bottom: 3vh;
-        right: 3vh;
-    }
-
-    #landing #name{
-        color: var(--black);
-        font-family: pixel;
-        font-size: 10vh;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        left: 6vh;
-        top: 79vh;
-        line-height: 0.7;
-    }
-
-    #landing #name #last{
-        font-size: 8vh;
-    }
-
-    #landing #occupations{
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        right: 6vh;
-        top: 79vh;
-        line-height: 1;
-        text-align: right;
     }
 
     @media screen and (max-aspect-ratio: 68/100) {
-        poster #work, poster #school, #landing #occupations {
-            display: none;
-        }
+    }
+
+    cursor{
+        position: fixed;
+        transform: translate(-50%, -50%);
+        transition: 0.1s;
+        backdrop-filter: invert(1);
+        width: 5vh;
+        height: 5vh;
+        border-radius: 50%;
+        pointer-events: none;
     }
 </style>

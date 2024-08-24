@@ -1,0 +1,10 @@
+<script>
+    var cursor = document.createElement("cursor");
+    document.body.appendChild(cursor);
+
+    window.addEventListener("mousemove", function(e){
+        console.log(cursor)
+        cursor.style.top = e.clientY + "px";
+        cursor.style.left = e.clientX + "px";
+    })
+</script>
