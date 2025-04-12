@@ -9,4 +9,56 @@
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
+	<style>
+		@font-face {
+			font-family: lazydog;
+			src: url(/fonts/lazydog.otf);
+		}
+
+		@font-face {
+			font-family: gabarito;
+			src: url(/fonts/gabarito.ttf);
+		}
+
+		html{
+			cursor: none !important;
+		}
+
+		body{
+			background: rgb(30, 30, 30);
+			color: white;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+		}
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		::-webkit-scrollbar {
+			display: none;
+		}
+
+		::selection{
+			background: rgba(200, 60, 60, 1);
+			color: white;
+		}
+
+		.fullpage{
+			top: 0;
+			left: 0;
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		.centered{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
 </html>
