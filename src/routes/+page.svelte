@@ -28,9 +28,9 @@
 	</div>
 </div>
 <script lang="ts">
-	import Paper from "./components/paper.svelte";
-	import Cursor from "./components/cursor.svelte";
-	import Selectable from "./components/selectable.svelte";
+	import Paper from "$lib/paper.svelte";
+	import Cursor from "$lib/cursor.svelte";
+	import Selectable from "$lib/selectable.svelte";
 	import { goto } from '$app/navigation';
 
 	type Page = {

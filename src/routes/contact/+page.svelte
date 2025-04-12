@@ -4,9 +4,9 @@
 	<h1 class="title">CONTACT</h1>
 </Frills>
 <script>
-	import Paper from "../components/paper.svelte";
-	import Cursor from "../components/cursor.svelte";
-	import Frills from "../components/frills.svelte";
+	import Paper from "$lib/paper.svelte";
+	import Cursor from "$lib/cursor.svelte";
+	import Frills from "$lib/frills.svelte";
 </script>
 <style>
 	h1{
