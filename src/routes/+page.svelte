@@ -1,3 +1,4 @@
+<Load {stillLoading} />
 <Cursor>
 	<div class="fullpage overlay">
 		<div class="strip">
@@ -14,7 +15,7 @@
 	</div>
 </Cursor>
 <div class="fullpage paper">
-	<Paper />
+	<Paper onload={() => stillLoading = false} />
 	<div class="strip">
 		<div class="intro">
 			<span class="greetings">hi there, i'm</span>
@@ -28,10 +29,13 @@
 	</div>
 </div>
 <script lang="ts">
+	import Load from "$lib/load.svelte";
 	import Paper from "$lib/paper.svelte";
 	import Cursor from "$lib/cursor.svelte";
 	import Selectable from "$lib/selectable.svelte";
 	import { goto } from '$app/navigation';
+
+	let stillLoading = $state(true);
 
 	type Page = {
 		title: string,

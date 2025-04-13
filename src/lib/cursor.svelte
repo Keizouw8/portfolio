@@ -43,7 +43,7 @@
 <style>
 	.cursor{
 		position: fixed;
-		z-index: 99999;
+		z-index: 9999;
 		pointer-events: none;
 		overflow: hidden;
 		cursor: none !important;
