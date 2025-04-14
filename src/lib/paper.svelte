@@ -11,11 +11,18 @@
 </script>
 <style>
 	img{
-		top: 0;
-		left: 0;
-		min-height: 100vh;
-		min-width: 100vw;
+		top: 50%;
+		left: 50%;
 		position: absolute;
+		transform: translate(-50%, -50%);
 		z-index: -1;
+		height: max(100vh, 57vw);
+	}
+
+	@media (max-aspect-ratio: 1/1){
+		img{
+			height: max(100vw, 57vh);
+			transform: translate(-50%, -50%) rotateZ(90deg);
+		}
 	}
 </style>
