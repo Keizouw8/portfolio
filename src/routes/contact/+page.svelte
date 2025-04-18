@@ -54,7 +54,7 @@
 <style>
 	*{
 		--unit: 1vh;
-		cursor: none;
+		cursor: none !important;
 	}
 
 	div.container{

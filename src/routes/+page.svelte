@@ -103,7 +103,7 @@
 	}
 
 	@media(max-aspect-ratio: 1/1){
-		:global(:root){
+		*{
 			--unit: min(0.7vh, 1.157vw);
 		}
 
