@@ -61,4 +61,15 @@
 		background: white;
 		position: absolute;
 	}
+
+	.box{
+		width: 100%;
+		height: 100%;
+		background: white;
+		position: absolute;
+	}
+
+	.none{
+		all: unset;
+	}
 </style>

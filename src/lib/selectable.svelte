@@ -6,12 +6,17 @@
 </div>
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements";
-	type EffectStyles = "underline";
+	type EffectStyles = "underline" | "box" | "none";
 	type Effect = EffectStyles | { effect: EffectStyles, style?: any };
 	type Props = {
 		children: any | undefined,
 		effect: Effect
 	} & HTMLAttributes<HTMLDivElement>;
-	let { children, effect,...attributes }: Props = $props();
+	let { children, effect, ...attributes }: Props = $props();
 	if(typeof effect == "string") effect = { effect: (effect as EffectStyles) };
 </script>
+<style>
+	div{
+		all: unset;
+	}
+</style>

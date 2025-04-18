@@ -23,7 +23,9 @@
 		</div>
 		<div class="occupations">
 			{#each pages as page}
-				<Selectable effect={{ effect: "underline" }} onclick={() => goto(page.url)}><span>{page.title}</span></Selectable>
+				<span>
+					<Selectable effect={{ effect: "underline" }} onclick={() => goto(page.url)}><span>{page.title}</span></Selectable>
+				</span>
 			{/each}
 		</div>
 	</div>
@@ -50,17 +52,13 @@
 	]);
 </script>
 <style>
-	:global(:root){
-		--unit: min(0.7vw, 1vh);
-	}
-
 	.paper{
 		position: fixed;
 	}
 
 	.overlay{
-		background: rgb(200, 60, 60);
-		color: rgb(45, 45, 45);
+		background: var(--red);
+		color: var(--gray);
 		pointer-events: none;
 	}
 
@@ -84,7 +82,7 @@
 	.title{
 		font-family: gabarito;
 		font-weight: 900;
-		color: rgb(200, 60, 60);
+		color: var(--red);
 		font-size: calc(18 * var(--unit));
 		line-height: 0.8;
 		width: calc(60.5 * var(--unit));

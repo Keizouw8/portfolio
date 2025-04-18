@@ -11,6 +11,12 @@
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 	<style>
+		:root{
+			--red: rgb(200, 60, 60);
+			--gray: rgb(30, 30, 30);
+			--unit: min(0.7vw, 1vh);
+		}
+
 		@font-face {
 			font-family: lazydog;
 			src: url(/fonts/lazydog.otf);
@@ -26,10 +32,11 @@
 		}
 
 		body{
-			background: rgb(30, 30, 30);
+			background: var(--gray);
 			color: white;
 			-ms-overflow-style: none;
 			scrollbar-width: none;
+			overflow: hidden;
 		}
 
 		*{
@@ -42,7 +49,7 @@
 		}
 
 		::selection{
-			background: rgba(200, 60, 60, 1);
+			background: var(--red);
 			color: white;
 		}
 
