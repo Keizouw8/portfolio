@@ -3,7 +3,7 @@
 	<div class="top" style="background: {color}"></div>
 	<div class="points t">
 			{#each { length } }
-			<div class="point"></div>
+			<div class="point" style="background: {background}"></div>
 			{/each}
 	</div>
 	<div class="container" style="background: {background}">
@@ -12,7 +12,7 @@
 	<div class="bottom" style="background: {color}"></div>
 	<div class="points b">
 			{#each { length } }
-			<div class="point"></div>
+			<div class="point" style="background: {background}"></div>
 			{/each}
 	</div>
 </div>
@@ -87,7 +87,7 @@
 	}
 
 	.points.b{
-		bottom: 15vh;
+		bottom: 15dvh;
 		animation: linear scroll-right 4s infinite;
 	}
 	
@@ -106,7 +106,6 @@
 		position: relative;
 		width: 12vh;
 		height: 2vh;
-		background: var(--gray);
 	}
 
 	@keyframes scroll-left{
