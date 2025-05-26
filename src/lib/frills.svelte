@@ -87,7 +87,7 @@
 	}
 
 	.points.b{
-		bottom: 15dvh;
+		bottom: 15vh;
 		animation: linear scroll-right 4s infinite;
 	}
 	
