@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="write">
-				<textarea placeholder={"Hi Keizou,\nYou're really cool!\n\nSincerely,\nYour biggest fan"}></textarea>
+				<textarea placeholder={"Hi Keizou,\n\nYou're really cool!\n\nSincerely,\nYour biggest fan"}></textarea>
 				<Selectable effect="none"><button>Leave me a note!</button></Selectable>
 			</div>
 		</div>

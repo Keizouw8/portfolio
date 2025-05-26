@@ -23,6 +23,10 @@
 	let length = $derived(Math.ceil(innerWidth/(innerHeight*0.12))+1);
 </script>
 <style>
+	.fullpage{
+		z-index: unset;
+	}
+	
 	.container{
 		z-index: 1;
 		position: absolute;
@@ -56,7 +60,7 @@
 		width: 100vw;
 		height: 17vh;
 		background: var(--red);
-		z-index: -2;
+		z-index: 0;
 	}
 
 	.top{
@@ -76,6 +80,7 @@
 		display: block;
 		width: 200vw;
 		height: 2vh;
+		z-index: 2;
 	}
 
 	.points.t{
@@ -109,13 +114,13 @@
 			left: 0vh;
 		}
 		100%{
-			left: calc(-12vh + 1px);
+			left: -12vh;
 		}
 	}
 
 	@keyframes scroll-right{
 		0%{
-			left: calc(-12vh + 1px);
+			left: -12vh;
 		}
 		100%{
 			left: 0;

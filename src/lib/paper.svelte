@@ -15,7 +15,7 @@
 		left: 50%;
 		position: fixed;
 		transform: translate(-50%, -50%);
-		z-index: -1;
+		z-index: 1;
 		height: max(100vh, 57vw);
 	}
 
