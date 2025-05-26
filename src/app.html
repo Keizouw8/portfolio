@@ -8,7 +8,7 @@
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
+		<div id="svelte-container">%sveltekit.body%</div>
 	</body>
 	<style>
 		:root{
@@ -30,13 +30,22 @@
 		html{
 			cursor: none !important;
 		}
-
-		body{
-			background: var(--gray);
-			color: white;
+		
+		#svelte-container{
+			scroll-snap-type: y mandatory;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			overflow: scroll;
+			overflow-x: hidden;
+			overflow-y: scroll;
 			-ms-overflow-style: none;
 			scrollbar-width: none;
-			overflow: hidden;
+			background: var(--gray);
+			color: white;
+			scroll-behavior: smooth;
 		}
 
 		*{
@@ -60,6 +69,7 @@
 			width: 100vw;
 			height: 100vh;
 			overflow: hidden;
+			scroll-snap-align: start;
 		}
 
 		@supports (height: 100dvh){

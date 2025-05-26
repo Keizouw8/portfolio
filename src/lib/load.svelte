@@ -26,6 +26,7 @@
 		z-index: 99999;
 		background: #1e1e1e;
 		transition: opacity 0.5s;
+		position: fixed;
 	}
 
 	svg{

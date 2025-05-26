@@ -1,133 +1,20 @@
 <Load {stillLoading} />
-<Cursor>
-	<div class="fullpage overlay">
-		<div class="strip">
-			<div class="intro">
-				<span class="greetings">hi there, i'm</span>
-				<h1 class="title">KEIZOU WANG</h1>
-			</div>
-			<div class="occupations">
-				{#each pages as page}
-					<span>{page.title}</span>
-				{/each}
-			</div>
-		</div>
-	</div>
-</Cursor>
-<div class="fullpage paper">
-	<Paper onload={() => stillLoading = false} />
-	<div class="strip">
-		<div class="intro">
-			<span class="greetings">hi there, i'm</span>
-			<h1 class="title">KEIZOU WANG</h1>
-		</div>
-		<div class="occupations">
-			{#each pages as page}
-				<span>
-					<Selectable effect={{ effect: "underline" }} onclick={() => goto(page.url)}><span>{page.title}</span></Selectable>
-				</span>
-			{/each}
-		</div>
-	</div>
-</div>
+<Cursor />
+<Paper onload={() => stillLoading = false} />
+<Landing />
+<Me />
+<Programming />
+<Philosophy />
+<Contact />
 <script lang="ts">
 	import Load from "$lib/load.svelte";
 	import Paper from "$lib/paper.svelte";
 	import Cursor from "$lib/cursor.svelte";
-	import Selectable from "$lib/selectable.svelte";
-	import { goto } from '$app/navigation';
+	import Landing from "./landing.svelte";
+	import Me from "./me.svelte";
+	import Philosophy from "./philosophy.svelte";
+	import Programming from "./programming.svelte";
+	import Contact from "./contact.svelte";
 
 	let stillLoading = $state(true);
-
-	type Page = {
-		title: string,
-		url: string
-	}
-
-	let pages: Page[] = $state([
-		{ title: "about me", url: "me" },
-		{ title: "programming", url: "programming" },
-		{ title: "philosophy", url: "philosophy" },
-		{ title: "contact", url: "contact" }
-	]);
 </script>
-<style>
-	.paper{
-		position: fixed;
-	}
-
-	.overlay{
-		background: var(--red);
-		color: var(--gray);
-		pointer-events: none;
-	}
-
-	.overlay .title{
-		color: white;
-	}
-
-	.strip{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 80vw;
-		transform: translate(-50%, -50%);
-	}
-
-	.greetings{
-		font-family: lazydog;
-		font-size: calc(7 * var(--unit));
-	}
-
-	.title{
-		font-family: gabarito;
-		font-weight: 900;
-		color: var(--red);
-		font-size: calc(18 * var(--unit));
-		line-height: 0.8;
-		width: calc(60.5 * var(--unit));
-	}
-
-	.occupations{
-		font-size: calc(5 * var(--unit));
-		font-family: lazydog;
-		justify-items: right;
-		line-height: 1.25;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-	}
-
-	.occupations span{
-		display: block;
-	}
-
-	@media(max-aspect-ratio: 1/1){
-		*{
-			--unit: min(0.7vh, 1.157vw);
-		}
-
-		.strip{
-			width: calc(60.5 * var(--unit));
-			height: calc(100vh - 39.5 * var(--unit));
-		}
-
-		.intro{
-			display: block;
-		}
-
-		.occupations{
-			left: 0;
-			justify-items: left;
-			font-size: calc(7.7 * var(--unit));
-		}
-
-		.greetings{
-			font-size: calc(7 * var(--unit));
-		}
-
-		.title{
-			font-size: calc(18 * var(--unit));
-		}
-	}
-</style>

@@ -1,53 +1,51 @@
-<Cursor />
-<Frills background="var(--gray)" color="var(--red)">
-	<div class="container">
-		<div class="contacts">
-			<h1 class="title">CONTACT</h1>
-			<div class="info">
-				<span>
-					Email:
-					<Selectable style="position: relative; align-items: flex-end; display: inline-flex; height: calc(5 * var(--unit));"
-						effect="underline">
-						keizouw8@gmail.com
-					</Selectable>
-					<div class="copy"><Fa size="0.75x" icon={faPaste} /></div>
-				</span>
-				<span>
-					Phone:
-					<Selectable style="position: relative; align-items: flex-end; display: inline-flex; height: calc(5 * var(--unit));"
-						effect="underline">
-						+1 (775) 223-6985
-					</Selectable>
-					<div class="copy"><Fa size="0.75x" icon={faPaste} /></div>
-				</span>
-				<span class="socials">Socials:
-					<Selectable
-						onclick={() => window.location = "https://github.com/Keizouw8" as string & Location}
-						style="position: relative; align-items: flex-end; display: inline-flex; height: calc(4 * var(--unit)); width: calc(4.5 * var(--unit));"
-						effect="none">
-						<Fa class="social" icon={faGithub}/>
-					</Selectable><Selectable
-						onclick={() => window.location = "https://www.linkedin.com/in/keizou-wang/" as string & Location}
-						style="position: relative; align-items: flex-end; display: inline-flex; height: calc(4 * var(--unit));"
-						effect="none">
-						<Fa class="social" icon={faLinkedin} />
-					</Selectable>
-				</span>
+<div id="contact">
+	<Frills background="var(--gray)" color="var(--red)">
+		<div class="container">
+			<div class="contacts">
+				<h1 class="title">CONTACT</h1>
+				<div class="info">
+					<span>
+						Email:
+						<Selectable style="position: relative; align-items: flex-end; display: inline-flex; height: calc(5 * var(--unit));"
+							effect="underline">
+							keizouw8@gmail.com
+						</Selectable>
+						<div class="copy"><Fa size="0.75x" icon={faPaste} /></div>
+					</span>
+					<span>
+						Phone:
+						<Selectable style="position: relative; align-items: flex-end; display: inline-flex; height: calc(5 * var(--unit));"
+							effect="underline">
+							+1 (775) 223-6985
+						</Selectable>
+						<div class="copy"><Fa size="0.75x" icon={faPaste} /></div>
+					</span>
+					<span class="socials">Socials:
+						<Selectable
+							onclick={() => window.location = "https://github.com/Keizouw8" as string & Location}
+							style="position: relative; align-items: flex-end; display: inline-flex; height: calc(4 * var(--unit)); width: calc(4.5 * var(--unit));"
+							effect="none">
+							<Fa class="social" icon={faGithub}/>
+						</Selectable><Selectable
+							onclick={() => window.location = "https://www.linkedin.com/in/keizou-wang/" as string & Location}
+							style="position: relative; align-items: flex-end; display: inline-flex; height: calc(4 * var(--unit));"
+							effect="none">
+							<Fa class="social" icon={faLinkedin} />
+						</Selectable>
+					</span>
+				</div>
+			</div>
+			<div class="write">
+				<textarea placeholder={"Hi Keizou,\nYou're really cool!\n\nSincerely,\nYour biggest fan"}></textarea>
+				<Selectable effect="none"><button>Leave me a note!</button></Selectable>
 			</div>
 		</div>
-		<div class="write">
-			<textarea placeholder={"Hi Keizou,\nYou're really cool!\n\nSincerely,\nYour biggest fan"}></textarea>
-			<Selectable effect="none"><button>Leave me a note!</button></Selectable>
-		</div>
-	</div>
-</Frills>
-<Paper />
+	</Frills>
+</div>
 <script lang="ts">
 	import Fa from "svelte-fa";
 	import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 	import { faPaste } from "@fortawesome/free-solid-svg-icons";
-	import Paper from "$lib/paper.svelte";
-	import Cursor from "$lib/cursor.svelte";
 	import Frills from "$lib/frills.svelte";
 	import Selectable from "$lib/selectable.svelte";
 </script>

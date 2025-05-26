@@ -1,18 +1,20 @@
 <svelte:window bind:innerHeight bind:innerWidth />
-<div class="top"></div>
-<div class="points t">
-	{#each { length }, i }
-		<div class="point" style="left: {i * 12}vh"></div>
-	{/each}
-</div>
-<div class="container">
-	{@render children?.()}
-</div>
-<div class="bottom"></div>
-<div class="points b">
-	{#each { length }, i }
-		<div class="point" style="right: {i * 12}vh"></div>
-	{/each}
+<div class="fullpage">
+	<div class="top"></div>
+	<div class="points t">
+			{#each { length } }
+			<div class="point"></div>
+			{/each}
+	</div>
+	<div class="container">
+			{@render children?.()}
+	</div>
+	<div class="bottom"></div>
+	<div class="points b">
+			{#each { length } }
+			<div class="point"></div>
+			{/each}
+	</div>
 </div>
 <script lang="ts">
 	let { children, background, color }: { children?: any, background: string, color: string } = $props();
@@ -23,16 +25,34 @@
 <style>
 	.container{
 		z-index: 1;
-		position: fixed;
+		position: absolute;
 		width: 100vw;
 		height: 66vh;
 		left: 0;
 		top: 17vh;
 		background: var(--gray);
 	}
+	
+	@keyframes top-in{
+		from{
+			left: 100vw;
+		}
+		to{
+			left: 0;
+		}
+	}
+	
+	@keyframes bottom-in{
+		from{
+			right: 100vw;
+		}
+		to{
+			right: 0;
+		}
+	}
 
 	.top, .bottom{
-		position: fixed;
+		position: absolute;
 		width: 100vw;
 		height: 17vh;
 		background: var(--red);
@@ -41,15 +61,21 @@
 
 	.top{
 		top: 0;
+		animation: linear top-in;
+		animation-timeline: scroll();
 	}
 
 	.bottom{
 		bottom: 0;
+		animation: linear bottom-in;
+		animation-timeline: scroll();
 	}
 
 	.points{
 		position: absolute;
 		display: block;
+		width: 200vw;
+		height: 2vh;
 	}
 
 	.points.t{
@@ -58,42 +84,41 @@
 	}
 
 	.points.b{
-		bottom: 17vh;
+		bottom: 15vh;
 		animation: linear scroll-right 4s infinite;
+	}
+	
+	.t .point{
+		clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+	}
+	
+	.b .point{
+		clip-path: polygon(50% 100%, 0 0, 100% 0);
 	}
 
 	.point{
 		display: inline-block;
-		position: absolute;
-		width: 0;
-		height: 0;
-		border-left: solid 6vh transparent;
-		border-right: solid 6vh transparent;
-	}
-
-	.t .point{
-		border-bottom: solid 2vh var(--gray);
-	}
-
-	.b .point{
-		border-top: solid 2vh var(--gray);
+		position: relative;
+		width: 12vh;
+		height: 2vh;
+		background: var(--gray);
 	}
 
 	@keyframes scroll-left{
 		0%{
-			left: 0;
+			left: 0vh;
 		}
 		100%{
-			left: -12vh;
+			left: calc(-12vh + 1px);
 		}
 	}
 
 	@keyframes scroll-right{
 		0%{
-			right: 0;
+			left: calc(-12vh + 1px);
 		}
 		100%{
-			right: -12vh;
+			left: 0;
 		}
 	}
 </style>
