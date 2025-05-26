@@ -94,10 +94,12 @@
 	}
 	
 	.t .point{
+		top: 1px;
 		clip-path: polygon(50% 0, 0% 100%, 100% 100%);
 	}
 	
 	.b .point{
+		top: -1px;
 		clip-path: polygon(50% 100%, 0 0, 100% 0);
 	}
 
