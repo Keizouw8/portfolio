@@ -1,15 +1,15 @@
 <svelte:window bind:innerHeight bind:innerWidth />
 <div class="fullpage">
-	<div class="top"></div>
+	<div class="top" style="background: {color}"></div>
 	<div class="points t">
 			{#each { length } }
 			<div class="point"></div>
 			{/each}
 	</div>
-	<div class="container">
+	<div class="container" style="background: {background}">
 			{@render children?.()}
 	</div>
-	<div class="bottom"></div>
+	<div class="bottom" style="background: {color}"></div>
 	<div class="points b">
 			{#each { length } }
 			<div class="point"></div>
@@ -34,7 +34,6 @@
 		height: 66vh;
 		left: 0;
 		top: 17vh;
-		background: var(--gray);
 	}
 	
 	@keyframes top-in{
@@ -59,7 +58,6 @@
 		position: absolute;
 		width: 100vw;
 		height: 17vh;
-		background: var(--red);
 		z-index: 0;
 	}
 
